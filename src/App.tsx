@@ -1,10 +1,11 @@
-const App = () => {
+import Hero from "./assets/pages/Home/sections/Hero/Hero";
 
+const App = () => {
   return (
     <>
-      App
+      <Hero />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
