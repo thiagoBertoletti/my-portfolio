@@ -1,12 +1,11 @@
-import { styled, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
+import { styled, Typography, Container, Grid } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import StyledButton from "../../../../../components/StyledButton/StyledButton";
 
 const Hero = () => {
-  const StyledHero = styled("div")(() => ({
-    backgroundColor: "black",
+  const StyledHero = styled("div")(({ theme }) => ({
+    backgroundColor: theme.palette.primary.main,
     height: "100vh",
   }));
 
@@ -15,17 +14,28 @@ const Hero = () => {
       <StyledHero>
         <Container maxWidth="lg">
           <Grid container spacing={2}>
-            <Grid item xs={8}>
-              <div>xs=8</div>
-            </Grid>
+            <Grid item xs={8}></Grid>
             <Grid item xs={12} md={8}>
-              <Typography color="primary" variant="h1" textAlign="center">
+              <Typography
+                color="primary.contrastText"
+                variant="h1"
+                textAlign="center"
+              >
                 Thiago Bertoletti
               </Typography>
-              <Typography color="primary" variant="h2" textAlign="center">
+              <Typography
+                color="primary.contrastText"
+                variant="h2"
+                textAlign="center"
+              >
                 I'm a Front-end Engineer
               </Typography>
-              <Grid container display="flex" justifyContent="center">
+              <Grid
+                container
+                display="flex"
+                justifyContent="center"
+                spacing={3}
+              >
                 <Grid
                   item
                   xs={12}
@@ -33,10 +43,10 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <button>
+                  <StyledButton>
                     <DownloadIcon />
-                    Download CV
-                  </button>
+                    <Typography>Download CV</Typography>
+                  </StyledButton>
                 </Grid>
                 <Grid
                   item
@@ -45,10 +55,10 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <button>
+                  <StyledButton>
                     <MailOutlineIcon />
-                    Contact me
-                  </button>
+                    <Typography>Contact me</Typography>
+                  </StyledButton>
                 </Grid>
               </Grid>
             </Grid>
